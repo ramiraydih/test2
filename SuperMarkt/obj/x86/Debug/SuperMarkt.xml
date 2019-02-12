@@ -1,0 +1,268 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SuperMarkt
+</name>
+</assembly>
+<members>
+<member name="P:SuperMarkt.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:SuperMarkt.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:SuperMarkt.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.BuypllDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.CompaniesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.CustomersDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.GroupsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.HoodorenserafDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.ImportersDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.ItemsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.OperationsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.placesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.ReBuypillDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.ResalepillDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.SalepllDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.UsersDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.BuypllRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.CompaniesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.CustomersRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.GroupsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.HoodorenserafRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.ImportersRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.ItemsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.OperationsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.placesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.ReBuypillRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.ResalepillRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.SalepllRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.UsersRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.BuypllRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.CompaniesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.CustomersRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.GroupsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.HoodorenserafRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.ImportersRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.ItemsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.OperationsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.placesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.ReBuypillRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.ResalepillRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.SalepllRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet.UsersRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSetTableAdapters.BuypllTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSetTableAdapters.CompaniesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSetTableAdapters.CustomersTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSetTableAdapters.GroupsTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSetTableAdapters.HoodorenserafTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSetTableAdapters.ImportersTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSetTableAdapters.ItemsTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSetTableAdapters.OperationsTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSetTableAdapters.placesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSetTableAdapters.ReBuypillTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSetTableAdapters.ResalepillTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSetTableAdapters.SalepllTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSetTableAdapters.UsersTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:SuperMarkt.SuperMarktDBDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(SuperMarkt.SuperMarktDBDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:SuperMarkt.SuperMarktDBDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(SuperMarkt.SuperMarktDBDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:SuperMarkt.SuperMarktDBDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(SuperMarkt.SuperMarktDBDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:SuperMarkt.SuperMarktDBDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:SuperMarkt.SuperMarktDBDataSetTableAdapters.TableAdapterManager.UpdateAll(SuperMarkt.SuperMarktDBDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:SuperMarkt.SuperMarktDBDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+</members>
+</doc>
