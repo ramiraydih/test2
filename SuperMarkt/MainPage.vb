@@ -65,7 +65,9 @@
     End Sub
 
     Private Sub الاToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles الاToolStripMenuItem.Click
-
+        UsersGO.MdiParent = Me
+        UsersGO.Show()
+        UsersGO.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub الحضورToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles الحضورToolStripMenuItem.Click

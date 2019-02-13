@@ -200,7 +200,6 @@ Module Connection_Load
         hooder_EnsrafdtDT.Clear()
         hooder_EnsrafdtDA = New OleDbDataAdapter("select*from Hoodorenseraf where HEDate=#" & Now.Date.ToString("yyyy/MM/dd") & "#", con)
         hooder_EnsrafdtDA.Fill(hooder_EnsrafdtDT)
-
-
     End Sub
+
 End Module

@@ -117,7 +117,7 @@ Public Class Users
             UserPhone.Text = UsersDT.Rows(pos).Item("UserPhone")
             UserTime.Value = UsersDT.Rows(pos).Item("UserTime")
             UserUser.Text = UsersDT.Rows(pos).Item("UserUser")
-            hghghghghgh()
+
 
 
         Catch ex As Exception

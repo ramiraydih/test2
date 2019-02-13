@@ -141,6 +141,12 @@
     <Compile Include="Users.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UsersGO.Designer.vb">
+      <DependentUpon>UsersGO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UsersGO.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UsesCome.Designer.vb">
       <DependentUpon>UsesCome.vb</DependentUpon>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Users.resx">
       <DependentUpon>Users.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersGO.resx">
+      <DependentUpon>UsersGO.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsesCome.resx">
       <DependentUpon>UsesCome.vb</DependentUpon>
