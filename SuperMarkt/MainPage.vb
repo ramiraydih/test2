@@ -75,4 +75,11 @@
         UsesCome.Show()
         UsesCome.WindowState = FormWindowState.Maximized
     End Sub
+
+    Private Sub فاتورةالشراءToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles فاتورةالشراءToolStripMenuItem.Click
+        Buypull.MdiParent = Me
+        Buypull.Show()
+        Buypull.WindowState = FormWindowState.Maximized
+
+    End Sub
 End Class

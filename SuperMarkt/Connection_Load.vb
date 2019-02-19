@@ -201,5 +201,29 @@ Module Connection_Load
         hooder_EnsrafdtDA = New OleDbDataAdapter("select*from Hoodorenseraf where HEDate=#" & Now.Date.ToString("yyyy/MM/dd") & "#", con)
         hooder_EnsrafdtDA.Fill(hooder_EnsrafdtDT)
     End Sub
+    '#######################################################################################
+    Public BuypllDT As New DataTable
+    Public BuypllDA As New OleDbDataAdapter
+    Public mynewIDBuypll As Integer
+    Public Sub Code_Buypll()
+        Dim dt As New DataTable
+        Dim da As New OleDbDataAdapter("select Max(BuyID)From Buypll ", con)
+        da.Fill(dt)
+
+        If IsDBNull(BuypllDT(0)(0)) = True Then
+            mynewIDBuypll = 1
+        Else
+            mynewIDBuypll = dt(0)(0) + 1
+        End If
+
+    End Sub
+    Public Sub load_Buypll()
+        BuypllDT.Clear()
+        BuypllDA = New OleDbDataAdapter("select*from Buypll ", con)
+        BuypllDA.Fill(BuypllDT)
+
+    End Sub
+
+
 
 End Module

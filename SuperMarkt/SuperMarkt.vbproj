@@ -72,6 +72,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buypull.Designer.vb">
+      <DependentUpon>Buypull.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Buypull.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Connection_Load.vb" />
     <Compile Include="Customer.Designer.vb">
       <DependentUpon>Customer.vb</DependentUpon>
@@ -83,6 +89,12 @@
       <DependentUpon>Importer.vb</DependentUpon>
     </Compile>
     <Compile Include="Importer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Importer_Search.Designer.vb">
+      <DependentUpon>Importer_Search.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Importer_Search.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ItemCompanies.Designer.vb">
@@ -155,11 +167,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Buypull.resx">
+      <DependentUpon>Buypull.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer.resx">
       <DependentUpon>Customer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Importer.resx">
       <DependentUpon>Importer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Importer_Search.resx">
+      <DependentUpon>Importer_Search.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemCompanies.resx">
       <DependentUpon>ItemCompanies.vb</DependentUpon>

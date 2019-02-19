@@ -24,6 +24,9 @@ Partial Class MainPage
     Private Sub InitializeComponent()
         Me.الموظفينToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.موظفجديدToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.اToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.الحضورToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.الاToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.الموردينToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.موردجديدToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.العملاءToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -34,9 +37,8 @@ Partial Class MainPage
         Me.شركةجديدToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.مكاناورفجديدToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.اToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.الحضورToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.الاToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.المشترياتToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.فاتورةالشراءToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -52,6 +54,25 @@ Partial Class MainPage
         Me.موظفجديدToolStripMenuItem.Name = "موظفجديدToolStripMenuItem"
         Me.موظفجديدToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
         Me.موظفجديدToolStripMenuItem.Text = "موظف جديد"
+        '
+        'اToolStripMenuItem
+        '
+        Me.اToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.الحضورToolStripMenuItem, Me.الاToolStripMenuItem})
+        Me.اToolStripMenuItem.Name = "اToolStripMenuItem"
+        Me.اToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.اToolStripMenuItem.Text = "الحضور والانصراف"
+        '
+        'الحضورToolStripMenuItem
+        '
+        Me.الحضورToolStripMenuItem.Name = "الحضورToolStripMenuItem"
+        Me.الحضورToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
+        Me.الحضورToolStripMenuItem.Text = "الحضور"
+        '
+        'الاToolStripMenuItem
+        '
+        Me.الاToolStripMenuItem.Name = "الاToolStripMenuItem"
+        Me.الاToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
+        Me.الاToolStripMenuItem.Text = "الانصراف"
         '
         'الموردينToolStripMenuItem
         '
@@ -112,31 +133,25 @@ Partial Class MainPage
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.الموظفينToolStripMenuItem, Me.الموردينToolStripMenuItem, Me.العملاءToolStripMenuItem, Me.الاصنافToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.الموظفينToolStripMenuItem, Me.الموردينToolStripMenuItem, Me.العملاءToolStripMenuItem, Me.الاصنافToolStripMenuItem, Me.المشترياتToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1058, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'اToolStripMenuItem
+        'المشترياتToolStripMenuItem
         '
-        Me.اToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.الحضورToolStripMenuItem, Me.الاToolStripMenuItem})
-        Me.اToolStripMenuItem.Name = "اToolStripMenuItem"
-        Me.اToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
-        Me.اToolStripMenuItem.Text = "الحضور والانصراف"
+        Me.المشترياتToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.فاتورةالشراءToolStripMenuItem})
+        Me.المشترياتToolStripMenuItem.Name = "المشترياتToolStripMenuItem"
+        Me.المشترياتToolStripMenuItem.Size = New System.Drawing.Size(68, 20)
+        Me.المشترياتToolStripMenuItem.Text = "المشتريات "
         '
-        'الحضورToolStripMenuItem
+        'فاتورةالشراءToolStripMenuItem
         '
-        Me.الحضورToolStripMenuItem.Name = "الحضورToolStripMenuItem"
-        Me.الحضورToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.الحضورToolStripMenuItem.Text = "الحضور"
-        '
-        'الاToolStripMenuItem
-        '
-        Me.الاToolStripMenuItem.Name = "الاToolStripMenuItem"
-        Me.الاToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.الاToolStripMenuItem.Text = "الانصراف"
+        Me.فاتورةالشراءToolStripMenuItem.Name = "فاتورةالشراءToolStripMenuItem"
+        Me.فاتورةالشراءToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.فاتورةالشراءToolStripMenuItem.Text = "فاتورة الشراء "
         '
         'MainPage
         '
@@ -170,4 +185,6 @@ Partial Class MainPage
     Friend WithEvents اToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents الحضورToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents الاToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents المشترياتToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents فاتورةالشراءToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
