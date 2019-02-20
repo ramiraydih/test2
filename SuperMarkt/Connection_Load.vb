@@ -210,7 +210,7 @@ Module Connection_Load
         Dim da As New OleDbDataAdapter("select Max(BuyID)From Buypll ", con)
         da.Fill(dt)
 
-        If IsDBNull(BuypllDT(0)(0)) = True Then
+        If IsDBNull(dt(0)(0)) = True Then
             mynewIDBuypll = 1
         Else
             mynewIDBuypll = dt(0)(0) + 1

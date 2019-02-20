@@ -44,6 +44,10 @@ Partial Class Buypull
         Me.BuyInvoiceNO = New System.Windows.Forms.TextBox()
         Me.BuyImporters = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.BuyCash = New System.Windows.Forms.CheckBox()
         Me.BuyPostpone = New System.Windows.Forms.CheckBox()
@@ -56,10 +60,6 @@ Partial Class Buypull
         Me.BuyAdd = New System.Windows.Forms.TextBox()
         Me.BuyMinus = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         BuyIDLabel = New System.Windows.Forms.Label()
@@ -282,6 +282,42 @@ Partial Class Buypull
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "تفاصيل المورد"
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(17, 69)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(13, 13)
+        Me.Label5.TabIndex = 3
+        Me.Label5.Text = "0"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(17, 38)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(13, 13)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "0"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(121, 69)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(73, 13)
+        Me.Label3.TabIndex = 1
+        Me.Label3.Text = "الرصيد الحالي "
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(152, 38)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(42, 13)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "التلفون "
+        '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -370,42 +406,6 @@ Partial Class Buypull
         Me.Button1.TabIndex = 34
         Me.Button1.Text = "...."
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(152, 38)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(42, 13)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "التلفون "
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(121, 69)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(73, 13)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "الرصيد الحالي "
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(17, 38)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(13, 13)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "0"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(17, 69)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(13, 13)
-        Me.Label5.TabIndex = 3
-        Me.Label5.Text = "0"
         '
         'Button2
         '

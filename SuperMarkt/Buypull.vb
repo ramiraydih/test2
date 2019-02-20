@@ -1,23 +1,57 @@
-﻿Public Class Buypull
+﻿Imports System.Data.OleDb
+
+Public Class Buypull
     Public Sub newpill()
         Code_Buypll()
-        BuyAdd.Text = ""
-        BuyCash.Text = ""
+        BuyAdd.Text = 0
+        BuyCash.Checked = True
         BuyDate.Value = Now.Date
-        BuyEarn.Text = ""
-        BuyEarnPercent.Text = ""
-        BuyID.Text = ""
+        BuyEarn.Text = 0
+        BuyEarnPercent.Text = 0
+        BuyID.Text = mynewIDBuypll
         BuyImporters.Text = ""
         BuyInvoiceNO.Text = ""
-        BuyItemCount.Text = ""
-        BuyMinus.Text = ""
-        BuyPostpone.Text = ""
+        BuyItemCount.Text = 0
+        BuyMinus.Text = 0
+        BuyPostpone.Checked = False
+        BuyTime.Value = Now
+        BuyTotalB.Text = 0
+        BuyTotalG.Text = 0
+        BuyUser.Text = ""
+
+    End Sub
+    Public Sub save_Buypill()
+        BuypllDT.Rows.Add()
+        Dim last As Integer = BuypllDT.Rows.Count - 1
+        BuypllDT.Rows(last).Item("BuyAdd") = BuyAdd.Text
+        BuypllDT.Rows(last).Item("BuyCash") = BuyCash.Text
+        BuypllDT.Rows(last).Item("BuyDate") = BuyDate.Value
+        BuypllDT.Rows(last).Item(" BuyEarn") = BuyEarn.Text
+        BuypllDT.Rows(last).Item("BuyEarnPercent") = BuyEarnPercent.Text
+        BuypllDT.Rows(last).Item("BuyID") = BuyID.Text
+        BuypllDT.Rows(last).Item("BuyImporters") = BuyImporters.Text
+        BuypllDT.Rows(last).Item("BuyInvoiceNO") = BuyInvoiceNO.Text
+        BuypllDT.Rows(last).Item("BuyItemCount ") = BuyItemCount.Text
+        BuypllDT.Rows(last).Item("BuyItemCount ") = BuyItemCount.Text
+
+        BuypllDT.Rows(last).Item("BuyMinus") = BuyMinus.Text
+        BuypllDT.Rows(last).Item("BuyPostpone") = BuyPostpone.Text
+        BuypllDT.Rows(last).Item("BuyTime") = BuyTime.Value
+        BuypllDT.Rows(last).Item("BuyTotalG") = BuyTotalG.Text
+        BuypllDT.Rows(last).Item("BuyTotalB") = BuyTotalB.Text
+        BuypllDT.Rows(last).Item("BuyUser") = BuyUser.Text
+        Dim save As New OleDbCommandBuilder(BuypllDA)
+        BuypllDA.Update(BuypllDT)
+        BuypllDT.AcceptChanges()
 
 
 
 
 
     End Sub
+
+
+
 
     Private Sub BuypllBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
@@ -28,6 +62,9 @@
         load_Buypll()
 
         DataGridView1.DataSource = BuypllDT
+        newpill()
+
+
         'اخفاءتفاصيل(المورد)
         GroupBox1.Visible = False
 
@@ -112,5 +149,20 @@
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Importer_Search.ShowDialog()
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        newpill()
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+
+
+        save_Buypill()
+
+
+
+
+        newpill()
     End Sub
 End Class
