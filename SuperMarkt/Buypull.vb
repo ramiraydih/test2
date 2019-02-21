@@ -24,18 +24,16 @@ Public Class Buypull
         BuypllDT.Rows.Add()
         Dim last As Integer = BuypllDT.Rows.Count - 1
         BuypllDT.Rows(last).Item("BuyAdd") = BuyAdd.Text
-        BuypllDT.Rows(last).Item("BuyCash") = BuyCash.Text
+        BuypllDT.Rows(last).Item("BuyCash") = BuyCash.Checked
         BuypllDT.Rows(last).Item("BuyDate") = BuyDate.Value
-        BuypllDT.Rows(last).Item(" BuyEarn") = BuyEarn.Text
+        BuypllDT.Rows(last).Item("BuyEarn") = BuyEarn.Text
         BuypllDT.Rows(last).Item("BuyEarnPercent") = BuyEarnPercent.Text
         BuypllDT.Rows(last).Item("BuyID") = BuyID.Text
         BuypllDT.Rows(last).Item("BuyImporters") = BuyImporters.Text
         BuypllDT.Rows(last).Item("BuyInvoiceNO") = BuyInvoiceNO.Text
-        BuypllDT.Rows(last).Item("BuyItemCount ") = BuyItemCount.Text
-        BuypllDT.Rows(last).Item("BuyItemCount ") = BuyItemCount.Text
-
+        BuypllDT.Rows(last).Item("BuyItemCount") = BuyItemCount.Text
         BuypllDT.Rows(last).Item("BuyMinus") = BuyMinus.Text
-        BuypllDT.Rows(last).Item("BuyPostpone") = BuyPostpone.Text
+        BuypllDT.Rows(last).Item("BuyPostpone") = BuyPostpone.Checked
         BuypllDT.Rows(last).Item("BuyTime") = BuyTime.Value
         BuypllDT.Rows(last).Item("BuyTotalG") = BuyTotalG.Text
         BuypllDT.Rows(last).Item("BuyTotalB") = BuyTotalB.Text
@@ -60,8 +58,16 @@ Public Class Buypull
     Private Sub Buypull_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'loading by bill table
         load_Buypll()
+        '============================================================================
+        'load buyQ tabl 
+        Dim dt As New DataTable
+        Dim da As New OleDbDataAdapter
+        dt.Clear()
+        da = New OleDbDataAdapter("SELECT Operations.OperID, Operations.BuyID, Operations.OperItem, Items.Itemplace, Items.ItemPrice, Items.ItemQyt, Operations.BuyQyt, Operations.BuyTotalG, Operations.BuyDiscound, Operations.BuyUnitPrice, Operations.BuyTotalB, Operations.BuyEarn, Operations.OperDate, Operations.OperTime, Operations.OperUser FROM Items INNER JOIN Operations ON Items.ItemName = Operations.OperItem;", con)
+        da.Fill(dt)
+        DataGridView1.DataSource = dt
+        '=======================================================================================
 
-        DataGridView1.DataSource = BuypllDT
         newpill()
 
 
@@ -156,11 +162,9 @@ Public Class Buypull
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-
-
         save_Buypill()
-
-
+        MsgBox("تم حفظ البيانات  بنجاح")
+        load_Buypll()
 
 
         newpill()

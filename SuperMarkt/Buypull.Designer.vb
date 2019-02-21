@@ -62,6 +62,8 @@ Partial Class Buypull
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         BuyIDLabel = New System.Windows.Forms.Label()
         BuyDateLabel = New System.Windows.Forms.Label()
         BuyTimeLabel = New System.Windows.Forms.Label()
@@ -79,6 +81,7 @@ Partial Class Buypull
         BuyMinusLabel = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'BuyIDLabel
@@ -321,7 +324,7 @@ Partial Class Buypull
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(52, 176)
+        Me.DataGridView1.Location = New System.Drawing.Point(30, 176)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(992, 218)
         Me.DataGridView1.TabIndex = 13
@@ -427,11 +430,32 @@ Partial Class Buypull
         Me.Button3.Text = "فاتور جديده"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.Yellow
+        Me.Button4.Location = New System.Drawing.Point(6, 19)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(43, 46)
+        Me.Button4.TabIndex = 37
+        Me.Button4.Text = "اضافة صنف "
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Button4)
+        Me.GroupBox2.Location = New System.Drawing.Point(1028, 176)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(55, 218)
+        Me.GroupBox2.TabIndex = 38
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "GroupBox2"
+        '
         'Buypull
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1111, 534)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -472,6 +496,7 @@ Partial Class Buypull
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -501,4 +526,6 @@ Partial Class Buypull
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
 End Class

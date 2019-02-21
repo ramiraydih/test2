@@ -37,3 +37,4 @@ E:\pro2018\SuperMarkt\SuperMarkt\SuperMarkt\obj\x86\Debug\SuperMarkt.vbproj.Gene
 E:\pro2018\SuperMarkt\SuperMarkt\SuperMarkt\obj\x86\Debug\SuperMarkt.UsersGO.resources
 E:\pro2018\SuperMarkt\SuperMarkt\SuperMarkt\obj\x86\Debug\SuperMarkt.Buypull.resources
 E:\pro2018\SuperMarkt\SuperMarkt\SuperMarkt\obj\x86\Debug\SuperMarkt.Importer_Search.resources
+E:\pro2018\SuperMarkt\SuperMarkt\SuperMarkt\obj\x86\Debug\SuperMarkt.Item_Search.resources
