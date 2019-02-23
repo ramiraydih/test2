@@ -38,3 +38,25 @@ E:\pro2018\SuperMarkt\SuperMarkt\SuperMarkt\obj\x86\Debug\SuperMarkt.UsersGO.res
 E:\pro2018\SuperMarkt\SuperMarkt\SuperMarkt\obj\x86\Debug\SuperMarkt.Buypull.resources
 E:\pro2018\SuperMarkt\SuperMarkt\SuperMarkt\obj\x86\Debug\SuperMarkt.Importer_Search.resources
 E:\pro2018\SuperMarkt\SuperMarkt\SuperMarkt\obj\x86\Debug\SuperMarkt.Item_Search.resources
+E:\المشاريع 2018\test2\SuperMarkt\bin\Debug\SuperMarkt.exe.config
+E:\المشاريع 2018\test2\SuperMarkt\obj\x86\Debug\SuperMarkt.exe
+E:\المشاريع 2018\test2\SuperMarkt\obj\x86\Debug\SuperMarkt.xml
+E:\المشاريع 2018\test2\SuperMarkt\obj\x86\Debug\SuperMarkt.pdb
+E:\المشاريع 2018\test2\SuperMarkt\bin\Debug\SuperMarkt.exe
+E:\المشاريع 2018\test2\SuperMarkt\bin\Debug\SuperMarkt.pdb
+E:\المشاريع 2018\test2\SuperMarkt\bin\Debug\SuperMarkt.xml
+E:\المشاريع 2018\test2\SuperMarkt\obj\x86\Debug\SuperMarkt.Buypull.resources
+E:\المشاريع 2018\test2\SuperMarkt\obj\x86\Debug\SuperMarkt.Customer.resources
+E:\المشاريع 2018\test2\SuperMarkt\obj\x86\Debug\SuperMarkt.Importer.resources
+E:\المشاريع 2018\test2\SuperMarkt\obj\x86\Debug\SuperMarkt.Importer_Search.resources
+E:\المشاريع 2018\test2\SuperMarkt\obj\x86\Debug\SuperMarkt.ItemCompanies.resources
+E:\المشاريع 2018\test2\SuperMarkt\obj\x86\Debug\SuperMarkt.ItemGroups.resources
+E:\المشاريع 2018\test2\SuperMarkt\obj\x86\Debug\SuperMarkt.Itemplaces.resources
+E:\المشاريع 2018\test2\SuperMarkt\obj\x86\Debug\SuperMarkt.Items.resources
+E:\المشاريع 2018\test2\SuperMarkt\obj\x86\Debug\SuperMarkt.Item_Search.resources
+E:\المشاريع 2018\test2\SuperMarkt\obj\x86\Debug\SuperMarkt.MainPage.resources
+E:\المشاريع 2018\test2\SuperMarkt\obj\x86\Debug\SuperMarkt.Resources.resources
+E:\المشاريع 2018\test2\SuperMarkt\obj\x86\Debug\SuperMarkt.Users.resources
+E:\المشاريع 2018\test2\SuperMarkt\obj\x86\Debug\SuperMarkt.UsersGO.resources
+E:\المشاريع 2018\test2\SuperMarkt\obj\x86\Debug\SuperMarkt.UsesCome.resources
+E:\المشاريع 2018\test2\SuperMarkt\obj\x86\Debug\SuperMarkt.vbproj.GenerateResource.Cache
