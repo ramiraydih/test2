@@ -1,6 +1,22 @@
 ﻿Imports System.Data.OleDb
 
 Public Class Buypull
+    Public Sub loadbuyQ()
+        Try
+            load_Buypll()
+            '============================================================================
+            'load buyQ tabl 
+            Dim dt As New DataTable
+            Dim da As New OleDbDataAdapter
+            dt.Clear()
+            da = New OleDbDataAdapter("SELECT Operations.OperID, Operations.BuyID, Operations.OperItem,operItemExp, Items.Itemplace, Items.ItemPrice, Items.ItemQyt, Operations.BuyQyt, Operations.BuyTotalG, Operations.BuyDiscound, Operations.BuyUnitPrice, Operations.BuyTotalB, Operations.BuyEarn, Operations.OperDate, Operations.OperTime, Operations.OperUser FROM Items INNER JOIN Operations ON Items.ItemName = Operations.OperItem;", con)
+            da.Fill(dt)
+            DataGridView1.DataSource = dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+        End Try
+    End Sub
     Public Sub newpill()
         Code_Buypll()
         BuyAdd.Text = 0
@@ -56,16 +72,14 @@ Public Class Buypull
     End Sub
 
     Private Sub Buypull_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+
         'loading by bill table
         load_Buypll()
+
         '============================================================================
         'load buyQ tabl 
-        Dim dt As New DataTable
-        Dim da As New OleDbDataAdapter
-        dt.Clear()
-        da = New OleDbDataAdapter("SELECT Operations.OperID, Operations.BuyID, Operations.OperItem, Items.Itemplace, Items.ItemPrice, Items.ItemQyt, Operations.BuyQyt, Operations.BuyTotalG, Operations.BuyDiscound, Operations.BuyUnitPrice, Operations.BuyTotalB, Operations.BuyEarn, Operations.OperDate, Operations.OperTime, Operations.OperUser FROM Items INNER JOIN Operations ON Items.ItemName = Operations.OperItem;", con)
-        da.Fill(dt)
-        DataGridView1.DataSource = dt
+        loadbuyQ()
         '=======================================================================================
 
         newpill()
@@ -73,6 +87,8 @@ Public Class Buypull
 
         'اخفاءتفاصيل(المورد)
         GroupBox1.Visible = False
+        '=========================================================
+
 
     End Sub
 
@@ -167,11 +183,36 @@ Public Class Buypull
         load_Buypll()
 
 
+
+
         newpill()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Item_Search.ShowDialog()
 
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+
+    End Sub
+
+    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
+        Dim dt As New DataTable
+        Dim cmd As New OleDbCommand
+        dt.Clear()
+        cmd = New OleDbCommand("Delete from  Operations where OperID = " & DataGridView1(0, DataGridView1.CurrentRow.Index).Value & "", con)
+        con.Open()
+        cmd.ExecuteNonQuery()
+        con.Close()
+        'load buyQ tabl 
+        loadbuyQ()
+
+      
+    End Sub
+
+    Private Sub DataGridView1_CellEndEdit(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellEndEdit
+       
     End Sub
 End Class
