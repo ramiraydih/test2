@@ -213,6 +213,17 @@ Public Class Buypull
     End Sub
 
     Private Sub DataGridView1_CellEndEdit(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellEndEdit
-       
+        Dim qty, discound As Double
+        Dim exp As Date
+        qty = DataGridView1(6, DataGridView1.CurrentRow.Index).Value
+        discound = DataGridView1(9, DataGridView1.CurrentRow.Index).Value
+        exp = DataGridView1(3, DataGridView1.CurrentRow.Index).Value
+        Dim dt As New DataTable
+        Dim cmd As New OleDbCommand
+        dt.Clear()
+        cmd = New OleDbCommand("UPDATE Operations SET BuyQyt = '" & qty & "', BuyDiscound = '" & discound & "'operItemExp= #" & exp & "# where OperID=" & DataGridView1(0, DataGridView1.CurrentRow.Index).Value & " ", con)
+        con.Open()
+        cmd.ExecuteNonQuery()
+        con.Close()
     End Sub
 End Class
