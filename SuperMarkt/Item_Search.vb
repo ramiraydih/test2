@@ -27,6 +27,10 @@ Public Class Item_Search
         'focusing on search text 
         TextBox1.Text = Nothing
         TextBox1.Focus()
+        '======================================
+        RadioButton3.Checked = True
+
+
 
 
 
@@ -98,18 +102,28 @@ Public Class Item_Search
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim itemname As String = DataGridView1(2, DataGridView1.CurrentRow.Index).Value
-        Dim dt As New DataTable
-        Dim cmd As New OleDbCommand
-        dt.Clear()
-        cmd = New OleDbCommand("insert into Operations (BuyID,OperItem,BuyQyt,BuyDiscound,BuyNotes,operItemExp) values (" & Buypull.BuyID.Text & ",'" & itemname & "'," & qtyin.Text & "," & disCoundin.Text & ",'" & note.Text & "',#" & exp.Value & "#)", con)
-        con.Open()
-        cmd.ExecuteNonQuery()
-        con.Close()
-        Buypull.loadbuyQ()
+        If qtyin.Text = 0 Then
+            MsgBox("ادخل الكمية المناسبه رجاء ")
+            qtyin.Focus()
+        ElseIf disCoundin.Text = 0 Then
+            MsgBox("ادخل الخصم المناسب رجاء")
+            disCoundin.Focus()
+        ElseIf exp.Value = Now.Date Then
+            MsgBox("ادحل  تاريخ صلاحية اكبر من صلاحية اليوم ")
+            exp.Focus()
 
-
-
-        newitem()
+        Else
+            Dim itemname As String = DataGridView1(2, DataGridView1.CurrentRow.Index).Value
+            Dim dt As New DataTable
+            Dim cmd As New OleDbCommand
+            dt.Clear()
+            cmd = New OleDbCommand("insert into Operations (BuyID,OperItem,BuyQyt,BuyDiscound,BuyNotes,operItemExp) values (" & Buypull.BuyID.Text & ",'" & itemname & "'," & qtyin.Text & "," & disCoundin.Text & ",'" & note.Text & "',#" & exp.Value & "#)", con)
+            con.Open()
+            cmd.ExecuteNonQuery()
+            con.Close()
+            Buypull.loadbuyQ()
+            newitem()
+        End If
+       
     End Sub
 End Class

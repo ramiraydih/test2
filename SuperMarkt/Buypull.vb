@@ -9,7 +9,7 @@ Public Class Buypull
             Dim dt As New DataTable
             Dim da As New OleDbDataAdapter
             dt.Clear()
-            da = New OleDbDataAdapter("SELECT Operations.OperID, Operations.BuyID, Operations.OperItem,operItemExp, Items.Itemplace, Items.ItemPrice, Items.ItemQyt, Operations.BuyQyt, Operations.BuyTotalG, Operations.BuyDiscound, Operations.BuyUnitPrice, Operations.BuyTotalB, Operations.BuyEarn, Operations.OperDate, Operations.OperTime, Operations.OperUser FROM Items INNER JOIN Operations ON Items.ItemName = Operations.OperItem;", con)
+            da = New OleDbDataAdapter("SELECT Operations.OperID, Operations.BuyID, Operations.OperItem,operItemExp, Items.Itemplace, Items.ItemPrice, Items.ItemQyt, Operations.BuyQyt, Operations.BuyTotalG, Operations.BuyDiscound, Operations.BuyUnitPrice, Operations.BuyTotalB, Operations.BuyEarn, Operations.OperDate, Operations.OperTime, Operations.OperUser FROM Items INNER JOIN Operations ON Items.ItemName = Operations.OperItem ", con)
             da.Fill(dt)
             DataGridView1.DataSource = dt
         Catch ex As Exception
@@ -76,6 +76,8 @@ Public Class Buypull
 
         'loading by bill table
         load_Buypll()
+
+
 
         '============================================================================
         'load buyQ tabl 
@@ -227,3 +229,6 @@ Public Class Buypull
         con.Close()
     End Sub
 End Class
+
+
+'======================================================================================================================
