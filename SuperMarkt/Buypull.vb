@@ -3,13 +3,11 @@
 Public Class Buypull
     Public Sub loadbuyQ()
         Try
-            load_Buypll()
-            '============================================================================
-            'load buyQ tabl 
+            '========================================================================  'load buyQ tabl 
             Dim dt As New DataTable
             Dim da As New OleDbDataAdapter
             dt.Clear()
-            da = New OleDbDataAdapter("SELECT Operations.OperID, Operations.BuyID, Operations.OperItem,operItemExp, Items.Itemplace, Items.ItemPrice, Items.ItemQyt, Operations.BuyQyt, Operations.BuyTotalG, Operations.BuyDiscound, Operations.BuyUnitPrice, Operations.BuyTotalB, Operations.BuyEarn, Operations.OperDate, Operations.OperTime, Operations.OperUser FROM Items INNER JOIN Operations ON Items.ItemName = Operations.OperItem ", con)
+            da = New OleDbDataAdapter("SELECT Operations.OperID, Operations.BuyID, Operations.OperItem,operItemExp, Items.Itemplace, Items.ItemPrice, Items.ItemQyt, Operations.BuyQyt, Operations.BuyTotalG, Operations.BuyDiscound, Operations.BuyUnitPrice, Operations.BuyTotalB, Operations.BuyEarn, Operations.OperDate, Operations.OperTime, Operations.OperUser FROM Items,Operations where Items.ItemName = Operations.OperItem  ", con)
             da.Fill(dt)
             DataGridView1.DataSource = dt
         Catch ex As Exception
@@ -76,21 +74,23 @@ Public Class Buypull
 
         'loading by bill table
         load_Buypll()
-
-
-
-        '============================================================================
         'load buyQ tabl 
-        loadbuyQ()
-        '=======================================================================================
+
 
         newpill()
 
-
         'اخفاءتفاصيل(المورد)
         GroupBox1.Visible = False
-        '=========================================================
 
+        loadbuyQ()
+        '=========================================================
+        Try
+            DataGridView1.Columns(2).DefaultCellStyle.BackColor = Color.Yellow
+
+
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 
@@ -177,17 +177,32 @@ Public Class Buypull
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         newpill()
+        loadbuyQ()
+
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        save_Buypill()
-        MsgBox("تم حفظ البيانات  بنجاح")
-        load_Buypll()
 
+        If BuyInvoiceNO.Text = Nothing Then
 
+            MsgBox("ادخل رقم الفاتوره ")
+        ElseIf BuyImporters.Text = Nothing Then
+            MsgBox("الرجاء ادخال اسم المورد ")
+            BuyImporters.Focus()
+        ElseIf BuyCash.Checked = False And BuyPostpone.Checked = False Then
+            MsgBox("الرجاء اختيار نوع الفاتوره دين او نقدي ")
+            BuyCash.Focus()
+        ElseIf DataGridView1.Rows.Count = 0 Then
+            MsgBox("ادخل الصنف المطلوب ")
 
+        Else
+            save_Buypill()
+            MsgBox("تم حفظ البيانات  بنجاح")
+            newpill()
+            load_Buypll()
+            loadbuyQ()
+        End If
 
-        newpill()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -196,8 +211,7 @@ Public Class Buypull
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-
+       
     End Sub
 
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
@@ -231,4 +245,5 @@ Public Class Buypull
 End Class
 
 
-'======================================================================================================================
+
+

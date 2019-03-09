@@ -2,7 +2,21 @@
 
 Public Class Item_Search
 
+    Public Sub Buycalculations()
+        Dim item As String
+        Dim qty, disCound, Price, unitPrice, total, totalB As Double
+        item = DataGridView1(2, DataGridView1.CurrentRow.Index).Value
+        qty = qtyin.Text
+        disCound = disCoundin.Text
+        Price = DataGridView1(6, DataGridView1.CurrentRow.Index).Value
+        total=qty*
 
+
+
+
+
+
+    End Sub
 
     Public Sub newitem()
 
@@ -124,6 +138,6 @@ Public Class Item_Search
             Buypull.loadbuyQ()
             newitem()
         End If
-       
+
     End Sub
 End Class
