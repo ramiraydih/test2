@@ -7,6 +7,7 @@ Public Class Buypull
             Dim dt As New DataTable
             Dim da As New OleDbDataAdapter
             dt.Clear()
+            '-----------------------------------------(0)-----------------(1)---------------(2)-------------(3)-----------(4)--------------(5)--------------(6)----------------(7)---------------(8)-------------------(9)------------------------(10)--------------------(11)-----------------(12)-----------------(13)-----------------(14)----------------(15)
             da = New OleDbDataAdapter("SELECT Operations.OperID, Operations.BuyID, Operations.OperItem,operItemExp, Items.Itemplace, Items.ItemPrice, Items.ItemQyt, Operations.BuyQyt, Operations.BuyTotalG, Operations.BuyDiscound, Operations.BuyUnitPrice, Operations.BuyTotalB, Operations.BuyEarn, Operations.OperDate, Operations.OperTime, Operations.OperUser FROM Items,Operations where Items.ItemName = Operations.OperItem  ", con)
             da.Fill(dt)
             DataGridView1.DataSource = dt
@@ -229,23 +230,33 @@ Public Class Buypull
     End Sub
 
     Private Sub DataGridView1_CellEndEdit(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellEndEdit
-        Dim qty, discound As Double
-        Dim exp As Date
-        qty = DataGridView1(6, DataGridView1.CurrentRow.Index).Value
-        discound = DataGridView1(9, DataGridView1.CurrentRow.Index).Value
-        exp = DataGridView1(3, DataGridView1.CurrentRow.Index).Value
-        Dim dt As New DataTable
-        Dim cmd As New OleDbCommand
-        dt.Clear()
-        cmd = New OleDbCommand("UPDATE Operations SET BuyQyt = '" & qty & "', BuyDiscound = '" & discound & "'operItemExp= #" & exp & "# where OperID=" & DataGridView1(0, DataGridView1.CurrentRow.Index).Value & " ", con)
-        con.Open()
-        cmd.ExecuteNonQuery()
-        con.Close()
-
-        
+        'Dim qty, discound As Double
+        'Dim exp As Date
+        'qty = DataGridView1(6, DataGridView1.CurrentRow.Index).Value
+        'discound = DataGridView1(9, DataGridView1.CurrentRow.Index).Value
+        'exp = DataGridView1(3, DataGridView1.CurrentRow.Index).Value
+        'Dim dt As New DataTable
+        'Dim cmd As New OleDbCommand
+        'dt.Clear()
+        'cmd = New OleDbCommand("UPDATE Operations SET BuyQyt = '" & qty & "', BuyDiscound = '" & discound & "'operItemExp= #" & exp & "# where OperID=" & DataGridView1(0, DataGridView1.CurrentRow.Index).Value & " ", con)
+        'con.Open()
+        'cmd.ExecuteNonQuery()
+        'con.Close()
+        '=====================================================================================
+        'اجمالي الجمهور 
         'total=qty*price
         '8=7*4
-        DataGridView1(8, DataGridView1.CurrentRow.Index).Value = Val(DataGridView1(7, DataGridView1.CurrentRow.Index).Value) * Val(DataGridView1(7, DataGridView1.CurrentRow.Index).Value)
+        DataGridView1(8, DataGridView1.CurrentRow.Index).Value = Val(DataGridView1(7, DataGridView1.CurrentRow.Index).Value) * Val(DataGridView1(5, DataGridView1.CurrentRow.Index).Value)
+        'اجمالي الشراء 
+        'totalb=total-(total*discound)
+        DataGridView1(11, DataGridView1.CurrentRow.Index).Value = Val(DataGridView1(8, DataGridView1.CurrentRow.Index).Value) - (Val(DataGridView1(8, DataGridView1.CurrentRow.Index).Value) * (Val(DataGridView1(9, DataGridView1.CurrentRow.Index).Value) / 100))
+
+        'سعر الشراء 
+        DataGridView1(10, DataGridView1.CurrentRow.Index).Value = Val(DataGridView1(11, DataGridView1.CurrentRow.Index).Value) / Val(DataGridView1(7, DataGridView1.CurrentRow.Index).Value)
+        'الربح
+        DataGridView1(12, DataGridView1.CurrentRow.Index).Value = Val(DataGridView1(8, DataGridView1.CurrentRow.Index).Value) - Val(DataGridView1(11, DataGridView1.CurrentRow.Index).Value)
+
+       
 
 
 
