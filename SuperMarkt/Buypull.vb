@@ -241,6 +241,15 @@ Public Class Buypull
         con.Open()
         cmd.ExecuteNonQuery()
         con.Close()
+
+        
+        'total=qty*price
+        '8=7*4
+        DataGridView1(8, DataGridView1.CurrentRow.Index).Value = Val(DataGridView1(7, DataGridView1.CurrentRow.Index).Value) * Val(DataGridView1(7, DataGridView1.CurrentRow.Index).Value)
+
+
+
+
     End Sub
 End Class
 
