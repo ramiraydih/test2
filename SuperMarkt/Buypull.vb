@@ -1,6 +1,9 @@
 ﻿Imports System.Data.OleDb
 
 Public Class Buypull
+
+    Private Property operationsCMD As OleDbCommand
+
     Public Sub loadbuyQ()
         Try
             '========================================================================  'load buyQ tabl 
@@ -15,6 +18,46 @@ Public Class Buypull
             MsgBox(ex.Message)
 
         End Try
+    End Sub
+    Public Sub buycalc()
+        'اجمالي الجمهور 
+        'total=qty*price
+        '8=7*4
+        DataGridView1(8, DataGridView1.CurrentRow.Index).Value = Val(DataGridView1(7, DataGridView1.CurrentRow.Index).Value) * Val(DataGridView1(5, DataGridView1.CurrentRow.Index).Value)
+        'اجمالي الشراء 
+        'totalb=total-(total*discound)
+        DataGridView1(11, DataGridView1.CurrentRow.Index).Value = Val(DataGridView1(8, DataGridView1.CurrentRow.Index).Value) - (Val(DataGridView1(8, DataGridView1.CurrentRow.Index).Value) * (Val(DataGridView1(9, DataGridView1.CurrentRow.Index).Value) / 100))
+
+        'سعر الشراء 
+        DataGridView1(10, DataGridView1.CurrentRow.Index).Value = Val(DataGridView1(11, DataGridView1.CurrentRow.Index).Value) / Val(DataGridView1(7, DataGridView1.CurrentRow.Index).Value)
+        'الربح
+        DataGridView1(12, DataGridView1.CurrentRow.Index).Value = Val(DataGridView1(8, DataGridView1.CurrentRow.Index).Value) - Val(DataGridView1(11, DataGridView1.CurrentRow.Index).Value)
+
+
+        Dim total, totalb, count, earn, perc As Double
+
+        For i As Integer = 0 To DataGridView1.Rows.Count - 1
+
+            total = total + Val(DataGridView1(8, DataGridView1.Rows(i).Index).Value)
+            totalb = totalb + Val(DataGridView1(11, DataGridView1.Rows(i).Index).Value)
+            count = DataGridView1.Rows.Count
+            earn = total - totalb
+            perc = (1 - (totalb / total)) * 100
+
+        Next
+        BuyTotalG.Text = total
+        BuyTotalB.Text = totalb
+        BuyItemCount.Text = count
+        BuyEarn.Text = earn
+        'نسبة الربح المتوقع بل نسبه المئويه 
+        BuyEarnPercent.Text = Math.Round(perc, 2)
+
+
+
+
+
+
+
     End Sub
     Public Sub newpill()
         Code_Buypll()
@@ -88,7 +131,8 @@ Public Class Buypull
         Try
             DataGridView1.Columns(2).DefaultCellStyle.BackColor = Color.Yellow
 
-
+            '=====================
+            buycalc()
         Catch ex As Exception
 
         End Try
@@ -197,6 +241,19 @@ Public Class Buypull
             MsgBox("ادخل الصنف المطلوب ")
 
         Else
+            buycalc()
+
+
+            '=============================================================
+
+            operationsCMD = New OleDbCommand("Update Operations SET BuyEarn ='" & BuyEarn.Text & "',BuyNotes='"&BuyNotes.Text&"',BuyDiscound='"&BuyDiscound.Text&"',BuyQyt='"&BuyQty.Text&"',BuyTotalB='"&BuyTotalB.Text&"',BuyTotalG='"&BuyTotalG.Text&"',BuyUnitPrice='"&BuyUnitPrice.Text&"',operItemExp='"&operItemExp.Text&"',)where operID=".Text",con ")
+            con.Open()
+            operationsCMD.ExecuteNonQuery()
+            con.Close()
+            Endsub()
+
+
+
             save_Buypill()
             MsgBox("تم حفظ البيانات  بنجاح")
             newpill()
@@ -243,22 +300,7 @@ Public Class Buypull
         'cmd.ExecuteNonQuery()
         'con.Close()
         '=====================================================================================
-        'اجمالي الجمهور 
-        'total=qty*price
-        '8=7*4
-        DataGridView1(8, DataGridView1.CurrentRow.Index).Value = Val(DataGridView1(7, DataGridView1.CurrentRow.Index).Value) * Val(DataGridView1(5, DataGridView1.CurrentRow.Index).Value)
-        'اجمالي الشراء 
-        'totalb=total-(total*discound)
-        DataGridView1(11, DataGridView1.CurrentRow.Index).Value = Val(DataGridView1(8, DataGridView1.CurrentRow.Index).Value) - (Val(DataGridView1(8, DataGridView1.CurrentRow.Index).Value) * (Val(DataGridView1(9, DataGridView1.CurrentRow.Index).Value) / 100))
-
-        'سعر الشراء 
-        DataGridView1(10, DataGridView1.CurrentRow.Index).Value = Val(DataGridView1(11, DataGridView1.CurrentRow.Index).Value) / Val(DataGridView1(7, DataGridView1.CurrentRow.Index).Value)
-        'الربح
-        DataGridView1(12, DataGridView1.CurrentRow.Index).Value = Val(DataGridView1(8, DataGridView1.CurrentRow.Index).Value) - Val(DataGridView1(11, DataGridView1.CurrentRow.Index).Value)
-
-       
-
-
+        buycalc()
 
 
     End Sub

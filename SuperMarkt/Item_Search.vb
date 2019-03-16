@@ -164,6 +164,10 @@ Public Class Item_Search
             con.Close()
             Buypull.loadbuyQ()
             newitem()
+
+
+            Buypull.buycalc()
+
         End If
 
     End Sub
