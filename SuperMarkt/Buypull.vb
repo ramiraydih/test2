@@ -2,7 +2,14 @@
 
 Public Class Buypull
 
-    Private Property operationsCMD As OleDbCommand
+    Public operationsCMD As New OleDbCommand
+    Public operationsDT As New DataTable
+    Public operationsDA As New OleDbDataAdapter
+
+    Public itemsCMD As New OleDbCommand
+
+
+
 
     Public Sub loadbuyQ()
         Try
@@ -245,12 +252,24 @@ Public Class Buypull
 
 
             '=============================================================
+            'UPDAT baypll detalis
+            For i As Integer = 0 To DataGridView1.Rows.Count - 1
+                operationsCMD = New OleDbCommand("UPDATE Operations SET BuyDiscound = " & DataGridView1(9, DataGridView1.Rows(i).Index).Value & ",BuyEarn= " & DataGridView1(12, DataGridView1.Rows(i).Index).Value & " ,BuyQyt= " & DataGridView1(7, DataGridView1.Rows(i).Index).Value & ",BuyTotalB=" & DataGridView1(11, DataGridView1.Rows(i).Index).Value & ", BuyTotalG=" & DataGridView1(8, DataGridView1.Rows(i).Index).Value & ",BuyUnitPrice=" & DataGridView1(10, DataGridView1.Rows(i).Index).Value & ",operItemExp=#" & DataGridView1(3, DataGridView1.Rows(i).Index).Value & "# where OperID=" & DataGridView1(0, DataGridView1.Rows(i).Index).Value & "", con)
 
-            operationsCMD = New OleDbCommand("Update Operations SET BuyEarn ='" & BuyEarn.Text & "',BuyNotes='"&BuyNotes.Text&"',BuyDiscound='"&BuyDiscound.Text&"',BuyQyt='"&BuyQty.Text&"',BuyTotalB='"&BuyTotalB.Text&"',BuyTotalG='"&BuyTotalG.Text&"',BuyUnitPrice='"&BuyUnitPrice.Text&"',operItemExp='"&operItemExp.Text&"',)where operID=".Text",con ")
-            con.Open()
-            operationsCMD.ExecuteNonQuery()
-            con.Close()
-            Endsub()
+                con.Open()
+                operationsCMD.ExecuteNonQuery()
+                con.Close()
+            Next
+            '=====================================
+            'updata qty in item  table 
+            Dim newqty As Double
+            newqty = 
+
+            For z As Integer = 0 To DataGridView1.Rows.Count - 1
+                itemsCMD = New OleDbCommand("update items SET ItemQyt='"&newqty"' where ItemName="&.Text&"",con)
+            Next
+
+
 
 
 
@@ -304,6 +323,11 @@ Public Class Buypull
 
 
     End Sub
+
+    Private Function BuyQyt() As Object
+        Throw New NotImplementedException
+    End Function
+
 End Class
 
 
