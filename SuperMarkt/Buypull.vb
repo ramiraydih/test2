@@ -8,6 +8,8 @@ Public Class Buypull
 
     Public itemsCMD As New OleDbCommand
 
+    Public importersCMD As New OleDbCommand
+
 
 
 
@@ -253,21 +255,34 @@ Public Class Buypull
 
             '=============================================================
             'UPDAT baypll detalis
-            For i As Integer = 0 To DataGridView1.Rows.Count - 1
-                operationsCMD = New OleDbCommand("UPDATE Operations SET BuyDiscound = " & DataGridView1(9, DataGridView1.Rows(i).Index).Value & ",BuyEarn= " & DataGridView1(12, DataGridView1.Rows(i).Index).Value & " ,BuyQyt= " & DataGridView1(7, DataGridView1.Rows(i).Index).Value & ",BuyTotalB=" & DataGridView1(11, DataGridView1.Rows(i).Index).Value & ", BuyTotalG=" & DataGridView1(8, DataGridView1.Rows(i).Index).Value & ",BuyUnitPrice=" & DataGridView1(10, DataGridView1.Rows(i).Index).Value & ",operItemExp=#" & DataGridView1(3, DataGridView1.Rows(i).Index).Value & "# where OperID=" & DataGridView1(0, DataGridView1.Rows(i).Index).Value & "", con)
+            'For i As Integer = 0 To DataGridView1.Rows.Count - 1
+            '    operationsCMD = New OleDbCommand("UPDATE Operations SET BuyDiscound = " & DataGridView1(9, DataGridView1.Rows(i).Index).Value & ",BuyEarn= " & DataGridView1(12, DataGridView1.Rows(i).Index).Value & " ,BuyQyt= " & DataGridView1(7, DataGridView1.Rows(i).Index).Value & ",BuyTotalB=" & DataGridView1(11, DataGridView1.Rows(i).Index).Value & ", BuyTotalG=" & DataGridView1(8, DataGridView1.Rows(i).Index).Value & ",BuyUnitPrice=" & DataGridView1(10, DataGridView1.Rows(i).Index).Value & ",operItemExp=#" & DataGridView1(3, DataGridView1.Rows(i).Index).Value & "# where OperID=" & DataGridView1(0, DataGridView1.Rows(i).Index).Value & "", con)
 
-                con.Open()
-                operationsCMD.ExecuteNonQuery()
-                con.Close()
-            Next
+            '    con.Open()
+            '    operationsCMD.ExecuteNonQuery()
+            '    con.Close()
+            'Next
             '=====================================
             'updata qty in item  table 
-            Dim newqty As Double
-            newqty = 
+            
+            'For z As Integer = 0 To DataGridView1.Rows.Count - 1
+            '    Dim newqty As Double
+            '    newqty = DataGridView1(7, DataGridView1.Rows(z).Index).Value + DataGridView1(6, DataGridView1.Rows(z).Index).Value
+            '    itemsCMD = New OleDbCommand("update items SET ItemQyt= " & newqty & " where ItemName= '" & DataGridView1(2, DataGridView1.Rows(z).Index).Value & "' ", con)
+            '    con.Open()
+            '    itemsCMD.ExecuteNonQuery()
+            '    con.Close()
 
-            For z As Integer = 0 To DataGridView1.Rows.Count - 1
-                itemsCMD = New OleDbCommand("update items SET ItemQyt='"&newqty"' where ItemName="&.Text&"",con)
-            Next
+            'Next
+            'If BuyPostpone.Checked = True Then
+            '    Dim newbalance As Double
+            '    newbalance = Val(BuyTotalB.Text) + Val(Label5.Text)
+
+            '    importersCMD = New OleDbCommand("Update Importers SET ImporterBalance = " & newbalance & " where ImporterName= '" & BuyImporters.Text & "'", con)
+            '    con.Open()
+            '    importersCMD.ExecuteNonQuery()
+            '    con.Close()
+            'End If
 
 
 
@@ -306,17 +321,17 @@ Public Class Buypull
     End Sub
 
     Private Sub DataGridView1_CellEndEdit(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellEndEdit
-        'Dim qty, discound As Double
-        'Dim exp As Date
-        'qty = DataGridView1(6, DataGridView1.CurrentRow.Index).Value
-        'discound = DataGridView1(9, DataGridView1.CurrentRow.Index).Value
-        'exp = DataGridView1(3, DataGridView1.CurrentRow.Index).Value
-        'Dim dt As New DataTable
-        'Dim cmd As New OleDbCommand
-        'dt.Clear()
-        'cmd = New OleDbCommand("UPDATE Operations SET BuyQyt = '" & qty & "', BuyDiscound = '" & discound & "'operItemExp= #" & exp & "# where OperID=" & DataGridView1(0, DataGridView1.CurrentRow.Index).Value & " ", con)
-        'con.Open()
-        'cmd.ExecuteNonQuery()
+        Dim qty, discound As Double
+        Dim exp As Date
+        qty = DataGridView1(6, DataGridView1.CurrentRow.Index).Value
+        discound = DataGridView1(9, DataGridView1.CurrentRow.Index).Value
+        exp = DataGridView1(3, DataGridView1.CurrentRow.Index).Value
+        Dim dt As New DataTable
+        Dim cmd As New OleDbCommand
+        dt.Clear()
+        cmd = New OleDbCommand("UPDATE Operations SET BuyQyt = '" & qty & "', BuyDiscound = '" & discound & "'operItemExp= #" & exp & "# where OperID=" & DataGridView1(0, DataGridView1.CurrentRow.Index).Value & " ", con)
+        con.Open()
+        cmd.ExecuteNonQuery()
         'con.Close()
         '=====================================================================================
         buycalc()
@@ -325,6 +340,10 @@ Public Class Buypull
     End Sub
 
     Private Function BuyQyt() As Object
+        Throw New NotImplementedException
+    End Function
+
+    Private Function newqt() As String
         Throw New NotImplementedException
     End Function
 
